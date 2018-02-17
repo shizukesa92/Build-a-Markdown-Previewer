@@ -5,8 +5,12 @@ body {
 .footer {
 	position: absolute;
 	background-color: #F0F8FF;
-	height: 10vh;
+	height: 5vh;
 	width: 100vw;
 	left: 0;
 	bottom: 0;
+}
+
+p {
+	line-height: 4vh; /* Setting line height to be same as footer vertical aligns it, 5vh inserts a blank space below footer so 4vh */
 }
