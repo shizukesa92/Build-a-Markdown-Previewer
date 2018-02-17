@@ -1,0 +1,12 @@
+body {
+	background-color: #FFE4C4;
+}
+
+.footer {
+	position: absolute;
+	background-color: #F0F8FF;
+	height: 10vh;
+	width: 100vw;
+	left: 0;
+	bottom: 0;
+}
