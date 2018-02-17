@@ -2,6 +2,13 @@ body {
 	background-color: #FFE4C4;
 }
 
+.markdown {
+	overflow: auto;
+	width: 50vh;
+	height: 50vh;
+	resize: vertical; /* Stops user from resizing textbox horizontally */
+}
+
 .footer {
 	position: absolute;
 	background-color: #F0F8FF;
@@ -11,6 +18,6 @@ body {
 	bottom: 0;
 }
 
-p {
+.footer p {
 	line-height: 4vh; /* Setting line height to be same as footer vertical aligns it, 5vh inserts a blank space below footer so 4vh */
 }
