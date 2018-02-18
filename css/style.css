@@ -1,7 +1,14 @@
-body {
-	background-color: #FFE4C4;
+html {
+   height: 100vh; 
 }
 
+body {
+  min-height: 100vh;
+  position: relative;  /* Required to make footer sticky */
+  background-color: #FFE4C4;
+  padding-bottom: 5vh; /* Equals to footer height, makes it sticky */
+}
+  
 .markdown {
 	overflow: auto;
 	width: 50vh;
