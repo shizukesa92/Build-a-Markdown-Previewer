@@ -1,0 +1,49 @@
+class Parent extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			value: "Start typing here"
+		}
+	}
+	
+	rawMarkup = (value) => {
+		/* Recommended from https://github.com/markedjs/marked#usage */
+		marked.setOptions({
+		  renderer: new marked.Renderer(),
+		  gfm: true,
+		  tables: true,
+		  breaks: false,
+		  pedantic: false,
+		  sanitize: false,
+		  smartLists: true,
+		  smartypants: false,
+		  xhtml: false
+		});
+		
+		var rawMarkup = marked(value, {sanitize: true});
+		return { __html: rawMarkup };
+	}
+	
+handleChange = (event) => {
+	this.setState({
+		value: event.target.value
+	});
+}
+
+	render(){
+		return (
+			<div className = "row">
+				<div className = "col-sm-6 col-xs-12 text-center">
+					<h3>Markdown input:</h3>
+					<textarea className = "markdown" placeholder = {this.state.value} onChange = {this.handleChange}></textarea>
+				</div>
+				<div className = "col-sm-6 col-xs-12">
+					<h3 className = "text-center">Markdown output:</h3>
+					<div dangerouslySetInnerHTML = {this.rawMarkup(this.state.value)}></div>
+				</div>	
+			</div>	
+		)
+	}
+};
+
+ReactDOM.render(<Parent />, document.getElementById('app'));

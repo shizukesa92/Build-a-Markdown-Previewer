@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+
 <html>
 	<head>
 		<title>Build a Markdown Previewer</title>
@@ -8,16 +10,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!-- Babel -->
-		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> <!-- IMPORTANT: Must use this script to transform class properties or arrow functions won't work. See: https://github.com/babel/babel-loader/issues/337--> 
 		<script type="text/babel" src="js/index.babel"></script>
 		<!-- React -->	
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
 		<!-- Markdown script -->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
@@ -28,17 +29,8 @@
 			<h1>Markdown Previewer</h1>
 			<p>Watch the right text text area update itself as you type markdown on the left!</p>
 		</div>
-		<div class = "container">
-			<div class = "row text-center" id = "app">
-				<div class = "col-sm-6 col-xs-12">
-					<h3>Markdown input:</h3>
-					<textarea id = "user-input" class = "markdown"></textarea>
-				</div>
-				<div class = "col-sm-6 col-xs-12">
-					<h3>Markdown output:</h3>
-					<div id = "user-output"></div>
-				</div>
-			</div>
+		<div class = "container" id = "app">
+				<!-- Render starts here -->
 		</div>
 		<div class = "footer text-center"><p><b>Coded by Leonard Tye</b></p></div>
 	</body>
